@@ -20,9 +20,11 @@
 # include <stdio.h>
 
 int		ft_printf(char const *, ...);
-
 int		ft_putchar(char c);
 int		ft_putstr(char *s);
 int		ft_putnbr(long nbr);
-
+int     ft_putptr(void *ptr);
+int     ft_putunbr(long nbr);
+int     ft_puthexlower(long nbr);
+int     ft_puthexupper(long nbr);
 #endif

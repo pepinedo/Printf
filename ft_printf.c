@@ -16,12 +16,20 @@ static int	ft_converse(char v, va_list pr)
 {
 	if (v == 'c')
 		return (ft_putchar(va_arg(pr, int)));
-	if (v == 's')
+	else if (v == 's')
 		return (ft_putstr(va_arg(pr, char *)));
-//	if (v == 'p')
-//		return (ft_putptr(va_arg(pr, )));
-	if (v == 'd' || v == 'i')
+	else if (v == 'p')
+		return (ft_putptr(va_arg(pr, void *0)));
+	else if (v == 'd' || v == 'i')
 		return (ft_putnbr(va_arg(pr, int)));
+	else if (v == 'u')
+		return (ft_putunbr(va_arg(pr, unsigned int)));
+	else if (v == 'x')
+		return (ft_puthexlower(va_arg(pr, long)));
+	else if (v == 'X')
+		return (ft_puthexupper(va_arg(pr, long)));
+	else if (v == '%')
+		return (ft_putchar('%'));
 	return (0);
 }
 
@@ -48,8 +56,10 @@ int	ft_printf(const char *type, ...)
 	return (howmany);
 }
 
+/*
 int main()
 {
 	printf("El entero es --> %i\n", 120234234);
 	ft_printf("El entero es --> %i\n", 120123123);
 }
+*/
