@@ -19,7 +19,7 @@ static int	ft_converse(char v, va_list pr)
 	else if (v == 's')
 		return (ft_putstr(va_arg(pr, char *)));
 	else if (v == 'p')
-		return (ft_putptr(va_arg(pr, void *0)));
+		return (ft_putptr(va_arg(pr, void *)));
 	else if (v == 'd' || v == 'i')
 		return (ft_putnbr(va_arg(pr, int)));
 	else if (v == 'u')
