@@ -5,7 +5,7 @@ int ft_puthexlower(long nbr)
     char*   base;
     int     count;
 
-    count = ft_numlen(nbr);
+    count = ft_hexlen(nbr);
     base = "0123456789ABCDEF";
     if (nbr < 0)
     {

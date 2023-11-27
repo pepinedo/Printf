@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-int ft_numlen(int nbr)
+int ft_hexlen(int nbr)
 {
     int i;
 
