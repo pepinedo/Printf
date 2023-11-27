@@ -20,6 +20,7 @@ FILES = ft_printf.c \
 		ft_putunbr.c \
 		ft_puthexlower.c \
 		ft_puthexupper.c \
+		ft_hexlen.c \
 
 OBJS = $(FILES:.c=.o)
 
