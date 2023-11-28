@@ -1,19 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_hexlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/28 11:23:08 by ppinedo-          #+#    #+#             */
+/*   Updated: 2023/11/28 11:30:42 by ppinedo-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int ft_hexlen(int nbr)
+int	ft_hexlen(int nbr)
 {
-    int i;
+	int	i;
 
-    i = 1;
-    if (nbr < 0)
-    {
-        nbr = nbr * -1;
-        i++;
-    }
-    while (nbr > 16)
-    {
-        nbr = nbr / 16;
-        i++;
-    }
-    return (i);
+	i = 1;
+	if (nbr < 0)
+	{
+		nbr = nbr * -1;
+		i++;
+	}
+	while (nbr > 16)
+	{
+		nbr = nbr / 16;
+		i++;
+	}
+	return (i);
 }

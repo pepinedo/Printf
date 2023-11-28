@@ -1,7 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/28 11:31:48 by ppinedo-          #+#    #+#             */
+/*   Updated: 2023/11/28 13:30:04 by ppinedo-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int ft_putptr(int ptr)
+int	ft_putptr(void *ptr)
 {
-    write(1, "0x", 2);
-    return (ft_puthexupper(ptr) + 2);
+	int	i;
+
+	i = 0;
+	write(1, "0x", 2);
+	return (ft_puthexupper((long)ptr) + 2);
 }

@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 16:29:54 by ppinedo-          #+#    #+#             */
-/*   Updated: 2023/11/15 17:00:50 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2023/11/28 13:31:31 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	ft_converse(char v, va_list pr)
 		return (ft_puthexupper(va_arg(pr, long)));
 	else if (v == '%')
 		return (ft_putchar('%'));
-	return (0);
+	return (-2147483648);
 }
 
 int	ft_printf(const char *type, ...)
@@ -56,10 +56,9 @@ int	ft_printf(const char *type, ...)
 	return (howmany);
 }
 
-/*
-int main()
+
+int	main(void)
 {
-	printf("El entero es --> %i\n", 120234234);
-	ft_printf("El entero es --> %i\n", 120123123);
+//	printf(" %p ", -1);
+	printf("%i\n", ft_printf("%p", "1"));
 }
-*/

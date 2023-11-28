@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:30:39 by ppinedo-          #+#    #+#             */
-/*   Updated: 2023/11/15 13:30:45 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2023/11/28 12:51:51 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_putstr(char *s)
 	int	i;
 
 	i = 0;
+	if (!s)
+		return (ft_putstr("(null)"));
 	while (s[i] != '\0')
 	{
 		ft_putchar(s[i]);
