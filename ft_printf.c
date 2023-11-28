@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 16:29:54 by ppinedo-          #+#    #+#             */
-/*   Updated: 2023/11/28 13:31:31 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:13:27 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 static int	ft_converse(char v, va_list pr)
 {
 	if (v == 'c')
-		return (ft_putchar(va_arg(pr, int)));
+		return (ft_putchar(va_arg(pr, int)));				//OK
 	else if (v == 's')
-		return (ft_putstr(va_arg(pr, char *)));
+		return (ft_putstr(va_arg(pr, char *)));  			//OK
 	else if (v == 'p')
-		return (ft_putptr(va_arg(pr, void *)));
+		return (ft_putptr(va_arg(pr, void *))); 			//OK
 	else if (v == 'd' || v == 'i')
-		return (ft_putnbr(va_arg(pr, int)));
+		return (ft_putnbr(va_arg(pr, int), 0));				//OK
 	else if (v == 'u')
-		return (ft_putunbr(va_arg(pr, unsigned int)));
+		return (ft_putunbr(va_arg(pr, unsigned int), 0));   //OK
 	else if (v == 'x')
-		return (ft_puthexlower(va_arg(pr, long)));
+		return (ft_puthexlower(va_arg(pr, int), 0));
 	else if (v == 'X')
-		return (ft_puthexupper(va_arg(pr, long)));
+		return (ft_puthexupper(va_arg(pr, int), 0));
 	else if (v == '%')
-		return (ft_putchar('%'));
+		return (ft_putchar('%'));  //OK
 	return (-2147483648);
 }
 
@@ -56,9 +56,10 @@ int	ft_printf(const char *type, ...)
 	return (howmany);
 }
 
-
+/*
 int	main(void)
 {
-//	printf(" %p ", -1);
-	printf("%i\n", ft_printf("%p", "1"));
-}
+	printf(" %d ", -1);
+	printf("\n");
+	ft_printf(" %d ", -1);
+}*/

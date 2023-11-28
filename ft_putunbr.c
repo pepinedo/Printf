@@ -6,32 +6,40 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 11:34:25 by ppinedo-          #+#    #+#             */
-/*   Updated: 2023/11/28 11:35:25 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:03:53 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putunbr(long nbr)
+int	ft_putunbr(unsigned int nbr, int i)
 {
-	int	i;
-
-	i = 0;
 	if (nbr == 0)
-		ft_putchar('0');
+		return (write(1, "0", 1));
 	if (nbr < 0)
 	{
-		ft_putchar('-');
-		nbr = -nbr;
-		i++;
+		i += write(1, "-", 1);
+		nbr = nbr * -1;
 	}
 	if (nbr > 9)
 	{
-		ft_putunbr(nbr / 10);
+		i = ft_putunbr(nbr / 10, i++);
 		nbr = nbr % 10;
+	}
+	if (nbr < 10)
+	{
+		ft_putchar(nbr + '0');
 		i++;
 	}
-	if (nbr <= 9)
-		ft_putchar(nbr + '0');
 	return (i);
 }
+
+/*
+int main()
+{
+	unsigned int	nbr;
+
+	nbr = -1;
+	printf("%i", ft_putunbr(nbr, 0));
+}
+*/

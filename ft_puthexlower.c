@@ -6,34 +6,34 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 11:33:04 by ppinedo-          #+#    #+#             */
-/*   Updated: 2023/11/28 13:22:38 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:12:55 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_puthexlower(long nbr)
+int	ft_puthexlower(int nbr, int i)
 {
 	char		*base;
-	static int	count;
 
-	count = 0;
 	base = "0123456789abcdef";
+	if (nbr == 16)
+		return (write(1, "10", 2));
 	if (nbr <= 16)
-		count += write(1, base + nbr, 1);
+		i += write(1, base + nbr, 1);
 	if (nbr > 16)
 	{
-		ft_puthexlower(nbr / 16);
-		count += write(1, base + (nbr % 16), 1);
+		i = ft_puthexlower(nbr / 16, i++);
+		i += write(1, base + (nbr % 16), 1);
 	}
-	return (count);
+	return (i);
 }
 
 /*
 int	main(void)
 {
 	int numero;
-	numero = 1000;
+	numero = 32;
 
-	ft_puthexlower(numero);
+	printf("%i", ft_puthexlower(numero, 0));
 }*/

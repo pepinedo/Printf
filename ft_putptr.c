@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 11:31:48 by ppinedo-          #+#    #+#             */
-/*   Updated: 2023/11/28 13:30:04 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:15:30 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 int	ft_putptr(void *ptr)
 {
-	int	i;
-
-	i = 0;
 	write(1, "0x", 2);
-	return (ft_puthexupper((long)ptr) + 2);
+	ft_puthexupper((long)ptr, 2);
+	return (11);
 }
