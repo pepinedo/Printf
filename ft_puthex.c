@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putptr.c                                        :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/28 11:31:48 by ppinedo-          #+#    #+#             */
-/*   Updated: 2023/11/29 12:22:24 by ppinedo-         ###   ########.fr       */
+/*   Created: 2023/11/29 11:53:25 by ppinedo-          #+#    #+#             */
+/*   Updated: 2023/11/29 12:04:23 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_puthexptr(char *base, unsigned long long nbr, int i)
+int	ft_puthex(char *base, unsigned int nbr, int i)
 {
-	unsigned long long	len;
+	unsigned int	len;
 
-	len = (unsigned long long)ft_strlen(base);
+	len = ft_strlen(base);
 	if (nbr >= len)
 	{
-		i = ft_puthexptr(base, nbr / len, i++);
+		i = ft_puthex(base, nbr / len, i++);
 		write(1, &base[nbr % len], 1);
 		i++;
 	}
@@ -31,18 +31,12 @@ static int	ft_puthexptr(char *base, unsigned long long nbr, int i)
 	return (i);
 }
 
-int	ft_putptr(void *ptr)
-{
-	write(1, "0x", 2);
-	return (ft_puthexptr("0123456789abcdef", (unsigned long long)ptr, 2));
-}
-
 /*
 int	main(void)
 {
-	void *ptr;
+	int numero;
+	numero = -10;
 
-	ptr = "Hola";
-	printf("%i\n", ft_putptr(""));
-	printf("%i\n", printf("%p", ""));
+	printf("%i", ft_puthex("0123456789abcdef", numero, 0));
+	printf("%i", printf("%x", numero));
 }*/

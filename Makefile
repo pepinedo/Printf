@@ -6,7 +6,7 @@
 #    By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 10:52:46 by ppinedo-          #+#    #+#              #
-#    Updated: 2023/11/15 13:33:48 by ppinedo-         ###   ########.fr        #
+#    Updated: 2023/11/29 11:54:13 by ppinedo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,8 @@ FILES = ft_printf.c \
 		ft_putstr.c \
 		ft_putptr.c \
 		ft_putunbr.c \
-		ft_puthexlower.c \
-		ft_puthexupper.c \
-		ft_hexlen.c \
+		ft_puthex.c \
+		ft_strlen.c \
 
 OBJS = $(FILES:.c=.o)
 
